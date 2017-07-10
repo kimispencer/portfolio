@@ -1,8 +1,11 @@
 import React from 'react';
+import CanvasAnimation from './CanvasAnimation';
 import './Home.css';
 
 const Home = () => (
 	<div className="Home">
+		<CanvasAnimation />
+		{/*
 		<div className="home-container flex-row responsive padded-width">
 			<div className="left-col">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.6 107.6" id="StarSVG">
@@ -25,6 +28,7 @@ const Home = () => (
 				</div>
 			</div>
 		</div>
+		*/}
 	</div>
 )
 export default Home;
