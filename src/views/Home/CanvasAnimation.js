@@ -50,13 +50,13 @@ class CanvasAnimation extends React.Component {
 			//of the particle
 			//Lets paint the canvas black
 			//But the BG paint shouldn't blend with the previous frame
-			ctx.globalCompositeOperation = "source-over";
+			// ctx.globalCompositeOperation = "source-over";
 			//Lets reduce the opacity of the BG paint to give the final touch
 			ctx.fillStyle = "rgba(0, 0, 0, 0.3)";
 			ctx.fillRect(0, 0, W, H);
 			
 			//Lets blend the particle with the BG
-			ctx.globalCompositeOperation = "lighter";
+			// ctx.globalCompositeOperation = "lighter";
 			
 			//Lets draw particles from the array now
 			for(var t = 0; t < particles.length; t++)
