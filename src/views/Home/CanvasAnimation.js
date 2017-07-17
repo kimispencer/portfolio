@@ -7,6 +7,7 @@ class CanvasAnimation extends React.Component {
     }
     updateCanvas() {
     	const ctx = this.refs.canvas.getContext('2d');
+
     	let w = window.innerWidth;
     	let h = window.innerHeight;
 		ctx.canvas.width  = w;
@@ -17,18 +18,29 @@ class CanvasAnimation extends React.Component {
     		return new createParticle();
     	});
 
-    	function createParticle() {
+    	function createParticle(hex) {
     		this.x = Math.random()*w;
     		this.y = Math.random()*h;
 
     		this.vx = Math.random()*10;
     		this.vy = Math.random()*10;
 
-    		this.color = "rbga(255,255,255,1)";
+			this.color = hex ? this.color = hex : this.color = "rbga(255,255,255,1)";
 			this.radius = Math.random()*4;
     	}
 
+    	function createAttractor() {
+			//draw a circle
+			ctx.beginPath();
+			ctx.arc(w/2, h/2, 10, 0, Math.PI*2, true); 
+			ctx.closePath();
+			ctx.fillStyle = "rgba(255,0,0,1)";
+			ctx.fill();
+    	}
+
     	function draw() {
+    		createAttractor();
+
     		ctx.fillStyle = "rgba(0, 0, 0, .1)";
     		ctx.fillRect(0, 0, w, h);
 	    	particles.map((p, i) => {
@@ -48,14 +60,6 @@ class CanvasAnimation extends React.Component {
 					p.vy = -p.vy;
 	    	});
     	}
-    	/*
-    	function attraction() {
-    		// logic for attraction to text
-    	}
-    	function collisionDetetion() {
-
-    	}
-    	*/
     	setInterval(draw, 60);
     }
     render() {
