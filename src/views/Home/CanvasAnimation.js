@@ -1,5 +1,6 @@
 import React from 'react';
-import './CanvasAnimation.css';
+
+require ('./CanvasAnimation.css');
 
 class CanvasAnimation extends React.Component {
     componentDidMount() {
@@ -43,6 +44,7 @@ class CanvasAnimation extends React.Component {
 
     		ctx.fillStyle = "rgba(0, 0, 0, .1)";
     		ctx.fillRect(0, 0, w, h);
+    		
 	    	particles.map((p, i) => {
 	    		ctx.beginPath();
 	    		ctx.arc(p.x, p.y, p.radius, Math.PI*2, false);
@@ -59,8 +61,9 @@ class CanvasAnimation extends React.Component {
 				if (p.y < 0 || p.y > h)
 					p.vy = -p.vy;
 	    	});
+	    	requestAnimationFrame(draw);
     	}
-    	setInterval(draw, 60);
+    	requestAnimationFrame(draw);
     }
     render() {
         return (

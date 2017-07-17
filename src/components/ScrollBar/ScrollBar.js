@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import './ScrollBar.css';
+require('./ScrollBar.css');
 
 // const ScrollBar = () => {
 // 	return(

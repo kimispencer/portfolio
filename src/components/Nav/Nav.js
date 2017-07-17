@@ -3,7 +3,7 @@ import {
 	Link
 } from 'react-router-dom';
 
-import './Nav.css';
+require('./Nav.css');
 
 const NavTrigger = (props) => (
 	<div className="NavTrigger" onClick={props._toggleNav}>

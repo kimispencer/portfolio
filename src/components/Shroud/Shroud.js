@@ -1,5 +1,5 @@
 import React from 'react';
-import './Shroud.css';
+require('./Shroud.css');
 
 // try using a ReactCSSTransition animation thingy here for onShow and onHide
 const Shroud = (props) => {

@@ -18,7 +18,7 @@ import ProjectList from './views/Projects/ProjectList';
 import Resume from './views/Resume/Resume';
 import Contact from './views/Contact/Contact';
 // css
-import './App.css';
+require('./App.css');
 
 class App extends Component {
 	constructor() {

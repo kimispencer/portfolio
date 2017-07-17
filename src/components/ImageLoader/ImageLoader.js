@@ -4,7 +4,7 @@
 */
 
 import React from 'react';
-import './ImageLoader.css';
+require('./ImageLoader.css');
 
 class ImageLoader extends React.Component {
 	constructor(props) {

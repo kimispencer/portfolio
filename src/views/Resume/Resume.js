@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Resume.css';
+require('./Resume.css');
 
 const Resume = () => (	
 	<div className="Resume">

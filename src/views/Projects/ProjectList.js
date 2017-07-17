@@ -6,7 +6,7 @@ import {
 import ImageLoader from '../../components/ImageLoader/ImageLoader';
 
 // import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
-import './ProjectList.css';
+require('./ProjectList.css');
 
 const PROJECTS = [
 	{

@@ -1,6 +1,6 @@
 import React, { } from 'react';
 
-import './Footer.css';
+require('./Footer.css');
 
 const Footer = (props) => {
 	return (
