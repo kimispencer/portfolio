@@ -7,11 +7,13 @@ class CanvasAnimation extends React.Component {
     }
     updateCanvas() {
     	const ctx = this.refs.canvas.getContext('2d');
-    	const w = 500;
-    	const h = 500;
+    	let w = window.innerWidth;
+    	let h = window.innerHeight;
+		ctx.canvas.width  = w;
+		ctx.canvas.height = h;
 
-    	const N = 10;
-    	let particles = Array.apply(null, {length: N}).map(() => {
+    	const num = 10;
+    	let particles = Array.apply(null, {length: num}).map(() => {
     		return new createParticle();
     	});
 
@@ -23,8 +25,9 @@ class CanvasAnimation extends React.Component {
     		this.vy = Math.random()*10;
 
     		this.color = "rbga(255,255,255,1)";
-    		this.radius = 1;
+			this.radius = Math.random()*4;
     	}
+
     	function draw() {
     		ctx.fillStyle = "rgba(0, 0, 0, .1)";
     		ctx.fillRect(0, 0, w, h);
@@ -38,13 +41,21 @@ class CanvasAnimation extends React.Component {
 				p.y += p.vy;
 
 				//To prevent the balls from moving out of the canvas
-				if(p.x < -p.radius) p.x = w+p.radius;
-				if(p.y < -p.radius) p.y = h+p.radius;
-				if(p.x > w+p.radius) p.x = -p.radius;
-				if(p.y > h+p.radius) p.y =  -p.radius;
+				if (p.x<0 || p.x > w)
+					p.vx = -p.vx;
 
+				if (p.y < 0 || p.y > h)
+					p.vy = -p.vy;
 	    	});
     	}
+    	/*
+    	function attraction() {
+    		// logic for attraction to text
+    	}
+    	function collisionDetetion() {
+
+    	}
+    	*/
     	setInterval(draw, 60);
     }
     render() {
