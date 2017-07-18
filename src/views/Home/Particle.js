@@ -1,8 +1,6 @@
 var add = require('vectors/add-nd')
 var mult = require('vectors/mult-nd');
 
-// import Vector from './Vector';
-
 class Particle {
 	constructor(canvas, x,y) {
 		this.canvas = canvas;

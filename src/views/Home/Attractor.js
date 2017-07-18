@@ -3,8 +3,6 @@ var mag = require('vectors/mag-nd')
 var mult = require('vectors/mult-nd')
 var normalize = require('vectors/normalize-nd')
 
-// import Vector from './Vector';
-
 class Attractor {
 	constructor(canvas) {
 		this.canvas = canvas;
