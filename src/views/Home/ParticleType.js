@@ -17,7 +17,7 @@ class ParticleType extends React.Component {
 		ctx.canvas.height = h;
 
     	// create particles
-    	const particle_num = 10;
+    	const particle_num = 2;
     	let particles = Array.apply(null, {length: particle_num}).map(() => {
     		let x = Math.random()*10;
     		let y = Math.random()*10;
@@ -30,8 +30,8 @@ class ParticleType extends React.Component {
     	// run animation
     	for (let p of particles) {
     		p._animate();
-	    	// let f = a._attract(p);
-	    	// p._applyForce(f);
+	    	let f = a._attract(p);
+	    	p._applyForce(f);
     	}
 
     	function draw() {
