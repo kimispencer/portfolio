@@ -61,7 +61,7 @@
   "scripts": {
 	"build-css": "node-sass src/ -o src/",
 	"watch-css": "npm run build-css && node-sass src/ -o src/ --watch --recursive",
-	"start": "webpack-dev-server",
+	"start": "webpack-dev-server --hot",
 	"dev": "webpack -d --watch",
 	"build" : "webpack -p"
   },
