@@ -2,6 +2,9 @@ import React from 'react';
 
 import './Resume.css';
 
+// var img = document.createElement('img');
+// img.src = require("../../public/assets/test.jpg");
+
 const Resume = () => (	
 	<div className="Resume">
 
