@@ -22,9 +22,4 @@ module.exports = {
 		historyApiFallback: true,
 		inline: true
 	} 
-	// plugins: debug ? [] : [
-	// 	new webpack.optimize.DedupePlugin(),
-	// 	new webpack.optimize.OccurenceOrderPlugin(),
-	// 	new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false }),
-	// ],
 }; 
