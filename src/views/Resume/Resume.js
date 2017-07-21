@@ -2,8 +2,7 @@ import React from 'react';
 
 import './Resume.css';
 
-// var img = document.createElement('img');
-// img.src = require("../../public/assets/test.jpg");
+const img = require('./test.jpg');
 
 const Resume = () => (	
 	<div className="Resume">
@@ -13,6 +12,7 @@ const Resume = () => (
 				<div className="left-col"></div>
 				<div className="right-col">
 					<div className="center">
+<img className="logo" src={img} />
 						<h2 className="bold title">KIMI SPENCER</h2>
 						<p className="monospace uppercase">hello@kimispencer.com</p>
 						<p className="monospace uppercase">Brooklyn, NY</p>
